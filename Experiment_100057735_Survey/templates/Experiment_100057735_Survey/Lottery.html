@@ -1,0 +1,105 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+
+    {% block title %}
+     <div style="padding:10px;font-size:125%;", class="otree-title">
+    <p>
+        In this part of the experimant, we will ask you to make a number of decisions.
+    </p></div>
+    {% endblock %}
+    {% block content %}
+     <div style="padding:10px;", class="table-borders"><p>
+        The decisions we will ask you to make will be choices between pairs of lotteries. The table below illustrates the task.
+    </p>
+    <p>
+        Each lottery can have two outcomes. The columns named Prob indicate the probability of each outcome of the draw, while the ECU columns indicate the value of the outcome.
+    </p>
+    <p> 
+        For example, in Decision #1, picking Lottery A means you have a 10% chance of getting 40.00 ECU and a 90% chance of getting 32.00 ECU; picking Lottery B means you have a chance of getting 77.00 ECU and a 90% chance of getting 2.00 ECU.
+    </p></div>
+       <div style="padding:10px;text-align:center;"><p>
+        <img src="{% static "Experiment_100057735/risk_table.png" %}"/>
+    </p></div>
+    <div style="padding:10px;", class="table-borders"><p>
+        If you look carefully, as you move down the table the probability associated with the high payoff rises for both Lottery A and Lottery B.
+    </p>
+    <p>
+        In fact, once you get to Decision 10, you know that the high-value outcome for each lottery will happen with certainty. Your choice is therefore between 40 ECU for sure if you pick Lottery A or 77 ECU for sure if you pick Lottery B. 
+    </p>
+    <p>
+        You must decide whether and when to switch from Lottery A to Lottery B.
+        If you wish to play Lottery A in all Decisions, write 11 in the box provided. If you wish to play Lottery B in all Decisions, write 1 in the box. 
+    </p>
+    <p>
+        Write a number between 2 and 10 in the box to switch to playing Lottery B starting with that Decision. For example, if you would like to play Decision A for Decisions 1 to 5 and B for Decisions 6 to 10, you should write 6 in the box. 
+    </p></div>
+    {% formfields %}
+    
+    {% next_button %}
+    {% endblock %}
+
+
+{% block styles %}
+    <style type="text/css">
+        .otree-title {
+            background-color: steelblue;
+            color: white;
+            margin: 10px 0 10px 0;
+            padding: 20px;
+        }
+
+        .otree-timer {
+            background: lightsteelblue;
+            color: white;
+            border-color: white;
+        }
+
+        .otree-body {
+            text-indent: each-line;
+        }
+
+        .box-heading {
+            background-color: steelblue;
+            color: white;
+            margin: 10px 10px 10px 10px;
+            padding: 10px 10px 10px 24px;
+        }
+
+        .table-style {
+            color: black;
+            margin: 10px 10px 10px 10px;
+        }
+
+        .table-borders {
+            border: solid;
+            border: steelblue;
+            background-color: #ecf2f9;
+            align-content: center;
+
+        }
+
+        .offer {
+            background-color: whitesmoke;
+            color: navy;
+            padding: 1px 10px 1px 10px;
+            border: groove;
+            border-color: lightsteelblue;
+            font-weight: bold;
+            margin: 1px;
+        }
+
+        .otree-btn-next {
+            background-color: steelblue;
+            color: white;
+            padding: 5px 10px 5px 10px;
+
+        }
+
+        h2, h3, h4, h5, h6 {
+            font-weight: bolder;
+            color: #24435c;
+        }
+
+    </style>
+{% endblock %}
