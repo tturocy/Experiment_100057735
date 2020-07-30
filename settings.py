@@ -6,25 +6,40 @@ from os import environ
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=0.02, participation_fee=0.00, doc=""
+    real_world_currency_per_point=0.02,
+    participation_fee=0.00,
+    doc=""
 )
 
-SESSION_CONFIGS = [dict(name='experiment_100057735',
-                        display_name='experiment 100057735',
-                        num_demo_participants=1,
-                        app_sequence=['Experiment_100057735_Introduction', 'Experiment_100057735_Task',
-                                      'Experiment_100057735_Survey'],),
-                   dict(name='experiment_100057735_T2',
-                        display_name='experiment 100057735 T2',
-                        num_demo_participants=1,
-                        app_sequence=['Experiment_100057735_Introduction_T2', 'Experiment_100057735_Task',
-                                      'Experiment_100057735_Survey'],),
-                   dict(name='experiment_100057735_T1',
-                        display_name='experiment 100057735 T1',
-                        num_demo_participants=1,
-                        app_sequence=['Experiment_100057735_Introduction_T1', 'Experiment_100057735_Task_T1',
-                                      'Experiment_100057735_Survey_T1'],),
-                    ]
+SESSION_CONFIGS = [
+    dict(name='experiment_100057735',
+         display_name='Treatment: Tax and NHS framing',
+         num_demo_participants=1,
+         app_sequence=[
+            'Experiment_100057735_Introduction',
+            'Experiment_100057735_Task',
+            'Experiment_100057735_Survey'
+         ],
+    ),
+    dict(name='experiment_100057735_T2',
+         display_name='Treatment: Tax only framing',
+         num_demo_participants=1,
+         app_sequence=[
+             'Experiment_100057735_Introduction_T2',
+             'Experiment_100057735_Task',
+             'Experiment_100057735_Survey'
+         ],
+    ),
+    dict(name='experiment_100057735_T1',
+         display_name='Treatment: Deduction framing',
+         num_demo_participants=1,
+         app_sequence=[
+             'Experiment_100057735_Introduction_T1',
+             'Experiment_100057735_Task_T1',
+             'Experiment_100057735_Survey_T1'
+         ],
+    ),
+]
 
 
 # ISO-639 code
@@ -49,7 +64,6 @@ ADMIN_USERNAME = 'admin'
 ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
 
 DEMO_PAGE_INTRO_HTML = """
-Here are some oTree games.
 """
 
 # don't share this with anybody.
