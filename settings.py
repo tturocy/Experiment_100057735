@@ -20,15 +20,17 @@ SESSION_CONFIGS = [
             'Experiment_100057735_Task',
             'Experiment_100057735_Survey'
          ],
+         mention_nhs=True,
     ),
     dict(name='experiment_100057735_T2',
          display_name='Treatment: Tax only framing',
          num_demo_participants=1,
          app_sequence=[
-             'Experiment_100057735_Introduction_T2',
+             'Experiment_100057735_Introduction',
              'Experiment_100057735_Task',
              'Experiment_100057735_Survey'
          ],
+         mention_nhs=False,
     ),
     dict(name='experiment_100057735_T1',
          display_name='Treatment: Deduction framing',

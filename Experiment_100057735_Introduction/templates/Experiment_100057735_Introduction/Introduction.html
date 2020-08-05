@@ -43,12 +43,14 @@
         Your income is taxable and you will be required to fill in a tax return. <b>The tax rate on your income is 25%</b>. This means
         that for every 10 ECU you earn, you must pay 2.5 ECU in tax.
     </p></div>
+    {% if session.config.mention_nhs %}
     <div style="padding:10px;text-align:center;"><p>
     <h5>
-    All Tax Income will be provided to the NHS.
+    All proceeds from the taxes collected on income will be provided to the NHS.
     We will send details on the donation to participants shortly after the
     completion of this series of experiments.
     </h5>
+    {% endif %}
     </p></div>
     <div style="padding:10px;", class="table-borders"><p>
         To fill in the tax return, you have simply to declare your income.
