@@ -1,46 +1,54 @@
 {% extends "global/Page.html" %}
 {% load otree %}
 
-    {% block title %}
-    <p>Instructions</p>
-    {% endblock %}
-    {% block content %}
-    <div style="padding:10px;font-size:125%;", class="table-borders">
-    <p>
-        This is an experiment in the economics of decision-making.  If you following the instructions
-        carefully and make appropriate decisions, you can earn an appreciable amount of money,
-        which will be paid to you shortly after the session.
-    </p>
-    </div>
-    <div style="padding:10px;font-size:125%;", class="otree-title">
-    <p>
-        Please read these instructions carefully because you will <b>NOT</b> be able to refer back to them
-        after you leave this page.
-    </p></div>
-    <div style="padding:10px;", class="table-borders"><p>
-        In this experiment, your earnings will be denoted in Experimental Currency Units (ECU). <b>50 ECU are worth £1</b>. After the experiment
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <p>
+            This is an experiment in the economics of decision-making.  If you following the instructions
+            carefully and make appropriate decisions, you can earn an appreciable amount of money,
+            which will be paid to you shortly after the session.
+            </p>
+        </div>
+        <div class="row alert-warning align-items-center">
+            <div class="col-12 p-2 m-2 text-center">
+            Please read these instructions carefully!
+             You will <strong>NOT</strong> be able to refer back to them
+            after you leave this page.
+            </div>
+        </div>
+    <div class="row">
+        <p>
+            In this experiment, your earnings will be denoted in Experimental Currency Units (ECU).
+            <strong>50 ECU are worth £1</strong>.
+            After the experiment
         is over, we will convert the total of your earnings for the whole session into pounds.
-    </p>
-    <p>
-        This part of the experiment is divided into <b>12 rounds</b>.
+        </p>
+        <p>
+        This experiment is divided into <strong>12 rounds</strong>.
         In each round, you will be presented with a series of tables containing ones and
         zeroes.
         Your task is to count and report the number of ones in the table.
-        You will earn an <em>income</em> of <b>10 ECU</b> for each table for which you
-        report the correct number of zeroes.
-    </p>
+        You will earn an <em>income</em> of <strong>10 ECU</strong> for each table for which you
+        report the correct number of ones.
+        A typical table is shown here:
+        </p>
     </div>
-    <div style="padding:10px;text-align:center;"><p>
-        <img src="{% static "Experiment_100057735/task_example1.png" %}" style="width:600px;"/>
-    </p></div>
-    <div style="padding:10px;", class="table-borders"><p>
-        Each round lasts <b>40 seconds</b>.
+    <div class="row align-content-center border p-2">
+        <img src="{% static "Experiment_100057735/task_example1.png" %}"/>
+    </div>
+    <div class="row">
+        <p>
+        Each round lasts <strong>40 seconds</strong>.
         At the end of the round, you will see the number of tables on which you
         reported the correct number of zeroes, and the total <em>income</em>
         you receive from these reports.
-    </p>
-
-    <p>
+        </p>
+        <p>
         {% if session.config.tax_framing %}
             Your income is taxable and you will be required to fill in a tax return.
             <b>The tax rate on your income is 25%</b>.
@@ -50,31 +58,33 @@
             The amount of income you declare will attract a <b>deduction of 25%</b>.
             This means that for every 10 ECU you earn, you must pay 2.5 ECU in deductions.
         {% endif %}
-    </p>
-    </div>
+        </p>
     {% if session.config.mention_nhs %}
-        <div style="padding:10px;text-align:center;"><p>
-            <h5>
+        <p class="alert-info h5 p-2">
                 All proceeds from the taxes collected on income will be provided to the NHS.
                 We will send details on the donation to participants shortly after the
                 completion of this series of experiments.
-            </h5>
-     </p></div>
+        </p>
     {% endif %}
-    <div style="padding:10px;", class="table-borders">
         <p>
         {% if session.config.tax_framing %}
                 To fill in the tax return, you have simply to declare your income.
                 Given the amount of income that you declare, the computer will
                 automatically compute the total amount of tax you will be required to pay.
+            You will declare your income using a box that looks like this:
         {% else %}
-                To fill in the announcement, you have simply to provide your earnings.
-                Given the amount of earnings that you announce, the computer will
+                To fill in the announcement, you have simply to provide your income.
+                Given the amount of income that you announce, the computer will
                 automatically compute the total amount of deductions you will be required to pay.
+            You will announce your income using a box that looks like this:
         {% endif %}
         </p>
     </div>
-    <p>
+    <div class="row border p-2">
+         <img src="{% static "Experiment_100057735/Income_Dec.png" %}"/>
+    </div>
+    <div class="row">
+        <p>
         {% if session.config.tax_framing %}
         Once you complete your tax form, the tax authority may choose to audit it.
         <b>There is a 1 in 5 chance (or 20% probability) your tax form will be audited.</b>
@@ -82,14 +92,13 @@
         Once you complete your announcement, your announcement may be reviewed.
         <b>There is a 1 in 5 chance (or 20% probability) your announcement will be reviewed.</b>
         {% endif %}
-    </p>
-    <div style="padding:10px;text-align:center;"><p>
-         <img src="{% static "Experiment_100057735/Income_Dec.png" %}" style="width:600px;"/>
-    </p></div>
+        </p>
+    </div>
+    <div class="row">
     {% if session.config.tax_framing %}
-    <div style="padding:10px;", class="table-borders"><p>
+    <p>
         <b>If you are NOT selected for tax audit:</b>
-        Your final earnings for the experimental round will be equal to your income
+        Your final earnings for the round will be equal to your income
         minus the tax paid based on the income you reported on your tax form.
     </p>
     <p>
@@ -104,8 +113,31 @@
             then you will be required to pay the extra amount of tax due to the authority.
             In addition, you will pay a fine of 1 ECU for each ECU of underpaid tax.
         </li>
-        </ul>
-    </p></div>
+    </ul>
+    {% else %}
+    <p>
+        <b>If you are NOT selected for review:</b>
+        Your final earnings for the round will be equal to your income
+        minus the deductions based on the income you announced.
+    </p>
+    <p>
+        <b>If you ARE selected for review:</b>
+        <ul>
+          <li>
+              If you announced your income accurately, then nothing further will happen;
+              your earnings for the round will be the same as if you had not been reviewed.
+          </li>
+          <li>
+              If you are reviewed and if you announced less income than you actually earned,
+              then you will be required to pay the extra amount of deductions due.
+              In addition, you will pay a further deduction of 1 ECU for each ECU of underpaid
+              deductions.
+          </li>
+       </ul>
+    {% endif %}
+    </div>
+    </div>
+    {% if session.config.tax_framing %}
     <div style="padding:10px;", class="table-borders"><p>
         Now let's go through a few hypothetical examples.
     </p>
@@ -139,7 +171,7 @@
         </tr>
         <tr>
             <th>
-                Selected by Tax Authoritiies for Audit?
+                Selected by Tax Authorities for Audit?
             </th>
             <td>
                 Yes
@@ -200,7 +232,7 @@
         </tr>
         <tr>
             <th>
-                Selected by Tax Authoritiies for Audit?
+                Selected by Tax Authorities for Audit?
             </th>
             <td>
                 Yes
@@ -327,19 +359,6 @@
     </p></div>
 
     {% else %}
-        <div style="padding:10px;", class="table-borders"><p>
-        <b>If you are NOT selected for review:</b>
-        Your final earnings for the experimental round will be equal to the amount of earnings you had made from the task minus the deductions you had on the earnings you announced.
-    </p>
-    <p>
-        <b>If you ARE selected for review:</b>
-    </p>
-    <p>
-        •If you are reviewed and if you announced your income accurately, then nothing further will happen; your final earnings for the round will be the same as if you had not been reviewed.
-    </p>
-    <p>
-        •If you are reviewed and if you announced less income than you actually earned, then you will be required to pay the extra amount of deductions due. In addition, you will pay further deductions of 1 ECU for each ECU of underpaid deductions.
-    </p></div>
     <div style="padding:10px;", class="table-borders"><p>
         Now let's go through a few hypothetical examples.
     </p>
