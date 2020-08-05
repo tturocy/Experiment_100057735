@@ -11,8 +11,9 @@
         Please answer the following questions to check your understanding of the instructions.
     </p></div>
 
-    {% formfields %}
-
+    {% formfield player.pre_test_question label=labels.0 %}
+    {% formfield player.pre_test_question_2 label=labels.1 %}
+    {% formfield player.pre_test_question_3 label=labels.2 %}
     {% next_button %}
 
 {% endblock %}

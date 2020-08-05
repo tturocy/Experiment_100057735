@@ -18,9 +18,6 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    """
-    Pre task related section
-    """
     do_you_understand = models.StringField(
         label='Please confirm you understand these instructions, as you will '
               'not be able to revisit them.', choices=['I understand'],
@@ -52,4 +49,3 @@ class Player(BasePlayer):
     def pre_test_question_3_error_message(self, value):
         if value != '50%':
             return 'The correct answer is 50%.'
-

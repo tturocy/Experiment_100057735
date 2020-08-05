@@ -39,31 +39,54 @@
         reported the correct number of zeroes, and the total <em>income</em>
         you receive from these reports.
     </p>
+
     <p>
-        Your income is taxable and you will be required to fill in a tax return. <b>The tax rate on your income is 25%</b>. This means
-        that for every 10 ECU you earn, you must pay 2.5 ECU in tax.
-    </p></div>
-    {% if session.config.mention_nhs %}
-    <div style="padding:10px;text-align:center;"><p>
-    <h5>
-    All proceeds from the taxes collected on income will be provided to the NHS.
-    We will send details on the donation to participants shortly after the
-    completion of this series of experiments.
-    </h5>
-    {% endif %}
-    </p></div>
-    <div style="padding:10px;", class="table-borders"><p>
-        To fill in the tax return, you have simply to declare your income.
-        Given the amount of income that you declare, the computer will
-        automatically compute the total amount of tax you will be required to pay.
+        {% if session.config.tax_framing %}
+            Your income is taxable and you will be required to fill in a tax return.
+            <b>The tax rate on your income is 25%</b>.
+            This means that for every 10 ECU you earn, you must pay 2.5 ECU in tax.
+        {% else %}
+            You will be required to announce your amount of income.
+            The amount of income you declare will attract a <b>deduction of 25%</b>.
+            This means that for every 10 ECU you earn, you must pay 2.5 ECU in deductions.
+        {% endif %}
     </p>
+    </div>
+    {% if session.config.mention_nhs %}
+        <div style="padding:10px;text-align:center;"><p>
+            <h5>
+                All proceeds from the taxes collected on income will be provided to the NHS.
+                We will send details on the donation to participants shortly after the
+                completion of this series of experiments.
+            </h5>
+     </p></div>
+    {% endif %}
+    <div style="padding:10px;", class="table-borders">
+        <p>
+        {% if session.config.tax_framing %}
+                To fill in the tax return, you have simply to declare your income.
+                Given the amount of income that you declare, the computer will
+                automatically compute the total amount of tax you will be required to pay.
+        {% else %}
+                To fill in the announcement, you have simply to provide your earnings.
+                Given the amount of earnings that you announce, the computer will
+                automatically compute the total amount of deductions you will be required to pay.
+        {% endif %}
+        </p>
+    </div>
     <p>
+        {% if session.config.tax_framing %}
         Once you complete your tax form, the tax authority may choose to audit it.
-        <b> There is a 1 in 5 chance (or 20% probability) your tax form will be audited.</b>
-    </p></div>
+        <b>There is a 1 in 5 chance (or 20% probability) your tax form will be audited.</b>
+        {% else %}
+        Once you complete your announcement, your announcement may be reviewed.
+        <b>There is a 1 in 5 chance (or 20% probability) your announcement will be reviewed.</b>
+        {% endif %}
+    </p>
     <div style="padding:10px;text-align:center;"><p>
          <img src="{% static "Experiment_100057735/Income_Dec.png" %}" style="width:600px;"/>
     </p></div>
+    {% if session.config.tax_framing %}
     <div style="padding:10px;", class="table-borders"><p>
         <b>If you are NOT selected for tax audit:</b>
         Your final earnings for the experimental round will be equal to your income
@@ -302,6 +325,241 @@
         STAGE 3: Your final earnings for the round depend on how your report your income
         and whether you were audited or not.
     </p></div>
+
+    {% else %}
+        <div style="padding:10px;", class="table-borders"><p>
+        <b>If you are NOT selected for review:</b>
+        Your final earnings for the experimental round will be equal to the amount of earnings you had made from the task minus the deductions you had on the earnings you announced.
+    </p>
+    <p>
+        <b>If you ARE selected for review:</b>
+    </p>
+    <p>
+        •If you are reviewed and if you announced your income accurately, then nothing further will happen; your final earnings for the round will be the same as if you had not been reviewed.
+    </p>
+    <p>
+        •If you are reviewed and if you announced less income than you actually earned, then you will be required to pay the extra amount of deductions due. In addition, you will pay further deductions of 1 ECU for each ECU of underpaid deductions.
+    </p></div>
+    <div style="padding:10px;", class="table-borders"><p>
+        Now let's go through a few hypothetical examples.
+    </p>
+    <p>
+        <h3> EXAMPLE 1</h3>
+    </p>
+    <table style="width:100%">
+        <tr>
+            <th>
+                Your Income
+            </th>
+            <td>
+                10 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Your Announced Income
+            </th>
+            <td>
+                10 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Deductions Paid on Announced Income
+            </th>
+            <td>
+                2.50 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Selected for Review?
+            </th>
+            <td>
+                Yes
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Deductions from Unannounced Earnings
+            </th>
+            <td>
+                0 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Additional Deductions
+            </th>
+            <td>
+                0 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                END OF ROUND INCOME
+            </th>
+            <td>
+                7.50 ECU
+            </td>
+        </tr>
+    </table>
+    <p>
+        <h3> EXAMPLE 2</h3>
+    </p>
+    <table style="width:100%">
+        <tr>
+            <th>
+                Your Income
+            </th>
+            <td>
+                20 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Your Announced Income
+            </th>
+            <td>
+                16 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Deductions Paid on Announced Earnings
+            </th>
+            <td>
+                4 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Selected for Review?
+            </th>
+            <td>
+                Yes
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Deductions from Unannounced Earnings
+            </th>
+            <td>
+                1 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Additional Deductions
+            </th>
+            <td>
+                1 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                END OF ROUND INCOME
+            </th>
+            <td>
+                14 ECU
+            </td>
+        </tr>
+    </table>
+    <p>
+        <h3> EXAMPLE 3</h3>
+    </p>
+    <table style="width:100%">
+        <tr>
+            <th>
+                Your Income
+            </th>
+            <td>
+                16 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Your Announced Earnings
+            </th>
+            <td>
+                10 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Deductions Paid on Announced Earnings
+            </th>
+            <td>
+                2.50 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Selected for Review?
+            </th>
+            <td>
+                No
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Deductions from Unannounced Earnings
+            </th>
+            <td>
+                0 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Additional Deductions
+            </th>
+            <td>
+                0 ECU
+            </td>
+        </tr>
+        <tr>
+            <th>
+                END OF ROUND INCOME
+            </th>
+            <td>
+                13.50 ECU
+            </td>
+        </tr>
+    </table></div>
+    <div style="padding:10px;", class="table-borders"><p>
+        After the review is completed, you will be presented with a screen that summarises the following:
+        <ul>
+            <li>
+                How much income you earned by solving tables.
+            </li>
+            <li>
+                The amount of income you announced.
+            </li>
+            <li>
+                Whether you were reviewed or not.
+            </li>
+            <li>
+                Your final income for the round.
+            </li>
+        </ul>
+    </p></div>
+    <div style="padding:10px;", class="box-heading"><p>
+        <b>Summary</b>
+    </p>
+    <p>
+        In short, each round in this part of the experiment will consist of three stages:
+    </p>
+    <p>
+        STAGE 1: You earn income by solving tables.
+    </p>
+    <p>
+        STAGE 2: You announce your income and pay a deduction.
+    </p>
+    <p>
+        STAGE 3: You get your final earnings, which depend on how your report your income and whether you were reviewed or not.
+    </p></div>
+    {% endif %}
+
     {% formfields %}
     
     {% next_button %}

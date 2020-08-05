@@ -21,6 +21,7 @@ SESSION_CONFIGS = [
             'Survey'
          ],
          mention_nhs=True,
+         tax_framing=True,
     ),
     dict(name='experiment_100057735_T2',
          display_name='Treatment: Tax only framing',
@@ -31,15 +32,18 @@ SESSION_CONFIGS = [
              'Survey'
          ],
          mention_nhs=False,
+         tax_framing=True,
     ),
     dict(name='experiment_100057735_T1',
          display_name='Treatment: Deduction framing',
          num_demo_participants=1,
          app_sequence=[
-             'Introduction_T1',
+             'Introduction',
              'Task_T1',
              'Survey_T1'
          ],
+         mention_nhs=False,
+         tax_framing=False,
     ),
 ]
 
