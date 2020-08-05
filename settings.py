@@ -16,9 +16,9 @@ SESSION_CONFIGS = [
          display_name='Treatment: Tax and NHS framing',
          num_demo_participants=1,
          app_sequence=[
-            'Experiment_100057735_Introduction',
-            'Experiment_100057735_Task',
-            'Experiment_100057735_Survey'
+            'Introduction',
+            'Task',
+            'Survey'
          ],
          mention_nhs=True,
     ),
@@ -26,9 +26,9 @@ SESSION_CONFIGS = [
          display_name='Treatment: Tax only framing',
          num_demo_participants=1,
          app_sequence=[
-             'Experiment_100057735_Introduction',
-             'Experiment_100057735_Task',
-             'Experiment_100057735_Survey'
+             'Introduction',
+             'Task',
+             'Survey'
          ],
          mention_nhs=False,
     ),
@@ -36,9 +36,9 @@ SESSION_CONFIGS = [
          display_name='Treatment: Deduction framing',
          num_demo_participants=1,
          app_sequence=[
-             'Experiment_100057735_Introduction_T1',
-             'Experiment_100057735_Task_T1',
-             'Experiment_100057735_Survey_T1'
+             'Introduction_T1',
+             'Task_T1',
+             'Survey_T1'
          ],
     ),
 ]
