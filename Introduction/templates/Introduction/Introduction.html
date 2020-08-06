@@ -136,6 +136,25 @@
           </li>
        </ul>
     {% endif %}
+
+    <p>
+    {% if session.config.tax_framing %}
+        After the audit is completed, you will be presented with a screen that summarises:
+    {% else %}
+        After the review is completed, you will be presented with a screen that summarises:
+    {% endif %}
+        <ul>
+            <li>How much income you received from solving tables;</li>
+    {% if session.config.tax_framing %}
+            <li>The amount of income you declared to the tax authority;</li>
+            <li>Whether your declaration was audited by the tax authority;</li>
+    {% else %}
+            <li>The amount of income you announced;</li>
+            <li>Whether your announcement was reviewed;</li>
+    {% endif %}
+            <li>Your final earnings for the round.</li>
+        </ul>
+    </p>
     </div>
     </div>
     {% if session.config.tax_framing %}
@@ -178,23 +197,7 @@
         <tr><th scope="row">Fine</th><td align="right">0.00 ECU</td></tr>
         <tr><th scope="row">END OF ROUND EARNINGS</th><td align="right"><strong>13.50 ECU</strong></td></tr>
         </tbody>
-    </table><p>
-        After the audit is completed, you will be presented with a screen that summarises the following: 
-        <ul>
-            <li>
-                How much income you received from solving tables
-            </li>
-            <li>
-                The amount of income you reported to the tax authority 
-            </li>
-            <li>
-                Whether you were audited or not by the tax authority 
-            </li>
-            <li>
-                Your final earnings for the round.
-            </li>
-        </ul>
-    </p></div>
+    </table></div>
 
     {% else %}
     <div class="row">
@@ -236,24 +239,6 @@
         <tr><th scope="row">END OF ROUND EARNINGS</th><td align="right"><strong>13.50 ECU</strong></td></tr>
         </tbody>
     </table>
-
-    <p>
-        After the review is completed, you will be presented with a screen that summarises the following:
-        <ul>
-            <li>
-                How much income you received from solving tables.
-            </li>
-            <li>
-                The amount of income you announced.
-            </li>
-            <li>
-                Whether you were reviewed or not.
-            </li>
-            <li>
-                Your final earnings for the round.
-            </li>
-        </ul>
-    </p>
     </div>
     {% endif %}
 
