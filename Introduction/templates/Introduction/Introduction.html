@@ -139,197 +139,50 @@
     </div>
     </div>
     {% if session.config.tax_framing %}
-    <div style="padding:10px;", class="table-borders"><p>
+    <div class="row">
+        <p>
         Now let's go through a few hypothetical examples.
     </p>
-    <p>
-        <h3> EXAMPLE 1</h3>
-    </p>
-    <table style="width:100%">
-        <tr>
-            <th>
-                Your Income
-            </th>
-            <td>
-                10 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Your Declared Income
-            </th>
-            <td>
-                10 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Tax paid on declared income
-            </th>
-            <td>
-                2.50 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Selected by Tax Authorities for Audit?
-            </th>
-            <td>
-                Yes
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Additional Tax Payable
-            </th>
-            <td>
-                0 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Fine
-            </th>
-            <td>
-                0 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                END OF ROUND INCOME
-            </th>
-            <td>
-                7.50 ECU
-            </td>
-        </tr>
+    <table class="table table-sm table-hover">
+        <thead class="thead-dark"><th scope="col">Example 1</th><th></th></thead>
+        <tbody>
+        <tr><th scope="row">Your Income</th><td align="right">10.00 ECU</td></tr>
+        <tr><th scope="row">Your Declared Income</th><td align="right">10.00 ECU</td></tr>
+        <tr><th scope="row">Tax Paid on Declared Income</th><td align="right">2.50 ECU</td></tr>
+        <tr><th scope="row">Selected by Tax Authorities for Audit?</th><td align="right">Yes</td></tr>
+        <tr><th scope="row">Additional Tax Payable</th><td align="right">0.00 ECU</td></tr>
+        <tr><th scope="row">Fine</th><td align="right">0.00 ECU</td></tr>
+        <tr><th scope="row">END OF ROUND EARNINGS</th><td align="right"><strong>7.50 ECU</strong></td></tr>
+        </tbody>
     </table>
-    <p>
-        <h3> EXAMPLE 2</h3>
-    </p>
-    <table style="width:100%">
-        <tr>
-            <th>
-                Your Income
-            </th>
-            <td>
-                20 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Your Declared Income
-            </th>
-            <td>
-                16 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Tax paid on declared income
-            </th>
-            <td>
-                4 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Selected by Tax Authorities for Audit?
-            </th>
-            <td>
-                Yes
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Additional Tax Payable
-            </th>
-            <td>
-                1 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Fine
-            </th>
-            <td>
-                1 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                END OF ROUND INCOME
-            </th>
-            <td>
-                14 ECU
-            </td>
-        </tr>
+    <table class="table table-sm table-hover">
+        <thead class="thead-dark"><th scope="col">Example 2</th><th></th></thead>
+        <tbody>
+        <tr><th scope="row">Your Income</th><td align="right">20.00 ECU</td></tr>
+        <tr><th scope="row">Your Declared Income</th><td align="right">16.00 ECU</td></tr>
+        <tr><th scope="row">Tax Paid on Declared Income</th><td align="right">4.00 ECU</td></tr>
+        <tr><th scope="row">Selected by Tax Authorities for Audit?</th><td align="right">Yes</td></tr>
+        <tr><th scope="row">Additional Tax Payable</th><td align="right">1.00 ECU</td></tr>
+        <tr><th scope="row">Fine</th><td align="right">1.00 ECU</td></tr>
+        <tr><th scope="row">END OF ROUND EARNINGS</th><td align="right"><strong>14.00 ECU</strong></td></tr>
+        </tbody>
     </table>
-    <p>
-        <h3> EXAMPLE 3</h3>
-    </p>
-    <table style="width:100%">
-        <tr>
-            <th>
-                Your Income
-            </th>
-            <td>
-                16 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Your Declared Income
-            </th>
-            <td>
-                10 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Tax paid on declared income
-            </th>
-            <td>
-                2.50 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Selected by Tax Authorities for Audit?
-            </th>
-            <td>
-                No
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Additional Tax Payable
-            </th>
-            <td>
-                0 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Fine
-            </th>
-            <td>
-                0 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                END OF ROUND INCOME
-            </th>
-            <td>
-                13.50 ECU
-            </td>
-        </tr>
-    </table></div>
-    <div style="padding:10px;", class="table-borders"><p>
+    <table class="table table-sm table-hover">
+        <thead class="thead-dark"><th scope="col">Example 3</th><th></th></thead>
+        <tbody>
+        <tr><th scope="row">Your Income</th><td align="right">16.00 ECU</td></tr>
+        <tr><th scope="row">Your Declared Income</th><td align="right">10.00 ECU</td></tr>
+        <tr><th scope="row">Tax Paid on Declared Income</th><td align="right">2.50 ECU</td></tr>
+        <tr><th scope="row">Selected by Tax Authorities for Audit?</th><td align="right">No</td></tr>
+        <tr><th scope="row">Additional Tax Payable</th><td align="right">0.00 ECU</td></tr>
+        <tr><th scope="row">Fine</th><td align="right">0.00 ECU</td></tr>
+        <tr><th scope="row">END OF ROUND EARNINGS</th><td align="right"><strong>13.50 ECU</strong></td></tr>
+        </tbody>
+    </table><p>
         After the audit is completed, you will be presented with a screen that summarises the following: 
         <ul>
             <li>
-                How much income you earned by solving tables
+                How much income you received from solving tables
             </li>
             <li>
                 The amount of income you reported to the tax authority 
@@ -338,7 +191,7 @@
                 Whether you were audited or not by the tax authority 
             </li>
             <li>
-                Your final income for the round. 
+                Your final earnings for the round.
             </li>
         </ul>
     </p></div>
@@ -404,7 +257,7 @@
         After the review is completed, you will be presented with a screen that summarises the following:
         <ul>
             <li>
-                How much income you earned by solving tables.
+                How much income you received from solving tables.
             </li>
             <li>
                 The amount of income you announced.
