@@ -6,15 +6,15 @@
 {% endblock %}
 
 {% block content %}
-<div style="padding:10px;" class="table-borders">
-<p class="text-center">In this round,
-    you correctly counted the ones in <strong>{{tables_correct}} of the {{number_of_tables_counted}}</strong>
-    tables
-you saw.</p>
+<div class="container">
+    <p class="text-center">In this round,
+    you correctly counted the ones in
+    <strong>{{tables_correct}} of the {{number_of_tables_counted}}</strong>
+        tables you saw.</p>
 
     <p class="text-center">Your income is therefore <strong>{{earned_in_round}} ECU</strong>. </p></div>
 
-    <div class="row p-1 justify-content-center align-items-center font-weight-bold">
+    <div class="row p-1 justify-content-center align-items-center font-weight-bold border">
         <div class="col-4 font-weight-bold">
             My declared income for this round is
         </div>
@@ -29,67 +29,4 @@ you saw.</p>
             </button>
         </div>
 
-{% endblock %}
-{% block styles %}
-    <style type="text/css">
-        .otree-title {
-            background-color: steelblue;
-            color: white;
-            margin: 10px 0 10px 0;
-            padding: 20px;
-        }
-
-        .otree-timer {
-            background: lightsteelblue;
-            color: white;
-            border-color: white;
-        }
-
-        .otree-body {
-            text-indent: each-line;
-        }
-
-        .box-heading {
-            background-color: steelblue;
-            color: white;
-            margin: 10px 10px 10px 10px;
-            padding: 10px 10px 10px 24px;
-        }
-
-        .table-style {
-            color: black;
-            margin: 10px 10px 10px 10px;
-        }
-
-        .table-borders {
-            border: solid;
-            border: steelblue;
-            background-color: #ecf2f9;
-            align-content: center;
-
-        }
-
-        .offer {
-            background-color: whitesmoke;
-            color: navy;
-            padding: 1px 10px 1px 10px;
-            border: groove;
-            border-color: lightsteelblue;
-            font-weight: bold;
-            margin: 1px;
-        }
-
-        .otree-btn-next {
-            background-color: steelblue;
-            color: white;
-            padding: 5px 10px 5px 10px;
-
-        }
-
-        h2, h3, h4, h5, h6 {
-            font-weight: bolder;
-            color: #24435c;
-        }
-
-    </style>
 {% endblock %}

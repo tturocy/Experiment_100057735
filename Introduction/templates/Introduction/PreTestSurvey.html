@@ -6,77 +6,23 @@
 {% endblock %}
 
 {% block content %}
-<div style="padding:10px;font-size:125%;", class="otree-title">
-    <p>
+<div class="row">
+    <p class="text-primary">
         Please answer the following questions to check your understanding of the instructions.
-    </p></div>
+    </p>
+</div>
 
+<div class="row">
     {% formfield player.pre_test_question label=labels.0 %}
+</div>
+<div class="row">
     {% formfield player.pre_test_question_2 label=labels.1 %}
+</div>
+<div class="row">
     {% formfield player.pre_test_question_3 label=labels.2 %}
-    {% next_button %}
+</div>
+    <div class="row justify-content-center">
+        <button class="otree-btn-next btn btn-primary">Check answers</button>
+    </div>
 
-{% endblock %}
-{% block styles %}
-    <style type="text/css">
-        .otree-title {
-            background-color: steelblue;
-            color: white;
-            margin: 10px 0 10px 0;
-            padding: 20px;
-        }
-
-        .otree-timer {
-            background: lightsteelblue;
-            color: white;
-            border-color: white;
-        }
-
-        .otree-body {
-            text-indent: each-line;
-        }
-
-        .box-heading {
-            background-color: steelblue;
-            color: white;
-            margin: 10px 10px 10px 10px;
-            padding: 10px 10px 10px 24px;
-        }
-
-        .table-style {
-            color: black;
-            margin: 10px 10px 10px 10px;
-        }
-
-        .table-borders {
-            border: solid;
-            border: steelblue;
-            background-color: #ecf2f9;
-            align-content: center;
-
-        }
-
-        .offer {
-            background-color: whitesmoke;
-            color: navy;
-            padding: 1px 10px 1px 10px;
-            border: groove;
-            border-color: lightsteelblue;
-            font-weight: bold;
-            margin: 1px;
-        }
-
-        .otree-btn-next {
-            background-color: steelblue;
-            color: white;
-            padding: 5px 10px 5px 10px;
-
-        }
-
-        h2, h3, h4, h5, h6 {
-            font-weight: bolder;
-            color: #24435c;
-        }
-
-    </style>
 {% endblock %}

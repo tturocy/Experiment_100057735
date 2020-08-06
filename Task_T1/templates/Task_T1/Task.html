@@ -2,85 +2,50 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    <strong> How many ones? </strong>
-    <strong> Round {{ subsession.round_number }} of {{ Constants.num_rounds }} </strong> - Counting Ones Task
+    Round {{ subsession.round_number }} of {{ Constants.num_rounds }}
 {% endblock %}
 
 {% block content %}
-<div style="padding:10px;", class="table-borders">
-    <p> Count as many 1's as you can before time runs out.  You will be rewarded for each table that you count correctly.</p></div>
-    {% for row in table_values %}
-        <div style="padding:10px;text-align:center;"><p>
-            {% for table_value in row %}
-                <b>  {{table_value}}  </b>
+<div class="container">
+<div class="row">
+    <p> Count as many 1's as you can before time runs out.
+        You will receive an income of 10 ECU each table that you count correctly.</p>
+</div>
+<div class="justify-content-center">
+    <div class="row justify-content-center">
+    <table width="50%">
+       <tbody>
+       {% for row in table_values %}
+           <tr>
+            {% for col in row %}
+                    <td align="center">
+                       {% if col %}
+                          <img width="15%" src="{% static "Task/One.png" %}"/>
+                       {% else %}
+                          <img width="15%" src="{% static "Task/Zero.png" %}"/>
+                       {% endif %}
+                    </td>
             {% endfor %}
-        </p></div>
-    {% endfor %}
+           </tr>
+           </tbody>
+     {% endfor %}
+    </table>
+    </div>
+</div>
 
-    {% formfields %}
-    {% next_button %}
+<div class="row justify-content-center align-items-center border m-3 p-2">
+    <div class="col-4 align-items-center">
+        <strong>How many 1's are in the table?</strong>
+    </div>
+    <div class="col-1 align-items-center">
+    {{ form.count }}
+    </div>
+</div>
 
-{% endblock %}
-{% block styles %}
-    <style type="text/css">
-        .otree-title {
-            background-color: steelblue;
-            color: white;
-            margin: 10px 0 10px 0;
-            padding: 20px;
-        }
-
-        .otree-timer {
-            background: lightsteelblue;
-            color: white;
-            border-color: white;
-        }
-
-        .otree-body {
-            text-indent: each-line;
-        }
-
-        .box-heading {
-            background-color: steelblue;
-            color: white;
-            margin: 10px 10px 10px 10px;
-            padding: 10px 10px 10px 24px;
-        }
-
-        .table-style {
-            color: black;
-            margin: 10px 10px 10px 10px;
-        }
-
-        .table-borders {
-            border: solid;
-            border: steelblue;
-            background-color: #ecf2f9;
-            align-content: center;
-
-        }
-
-        .offer {
-            background-color: whitesmoke;
-            color: navy;
-            padding: 1px 10px 1px 10px;
-            border: groove;
-            border-color: lightsteelblue;
-            font-weight: bold;
-            margin: 1px;
-        }
-
-        .otree-btn-next {
-            background-color: steelblue;
-            color: white;
-            padding: 5px 10px 5px 10px;
-
-        }
-
-        h2, h3, h4, h5, h6 {
-            font-weight: bolder;
-            color: #24435c;
-        }
-
-    </style>
+        <div class="row p-3 justify-content-center">
+            <button class="otree-btn-next btn btn-primary">
+                Confirm answer and go to next table
+            </button>
+        </div>
+</div>
 {% endblock %}

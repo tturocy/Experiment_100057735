@@ -30,6 +30,7 @@ class Task(Page):
         self.player.check_answer()
         self.player.update_iterator()
         self.participant.vars['expiry'] = self.participant.vars['expiry']
+        self.player.count = None
 
 
 class Tax_Man(Page):
