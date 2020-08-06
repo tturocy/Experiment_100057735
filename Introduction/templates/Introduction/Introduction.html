@@ -52,11 +52,12 @@
         {% if session.config.tax_framing %}
             Your income is taxable and you will be required to fill in a tax return.
             <b>The tax rate on your income is 25%</b>.
-            This means that for every 10 ECU you earn, you must pay 2.5 ECU in tax.
+            This means that for every 10 ECU you declare on the tax return,
+            you will pay 2.50 ECU in tax.
         {% else %}
             You will be required to announce your amount of income.
-            The amount of income you declare will attract a <b>deduction of 25%</b>.
-            This means that for every 10 ECU you earn, you must pay 2.5 ECU in deductions.
+            The amount of income you announce will attract a <b>deduction of 25%</b>.
+            This means that for every 10 ECU you announce, you will pay 2.50 ECU in deductions.
         {% endif %}
         </p>
     {% if session.config.mention_nhs %}
@@ -73,7 +74,7 @@
                 automatically compute the total amount of tax you will be required to pay.
             You will declare your income using a box that looks like this:
         {% else %}
-                To fill in the announcement, you have simply to provide your income.
+                To fill in the announcement, you have simply to announce your income.
                 Given the amount of income that you announce, the computer will
                 automatically compute the total amount of deductions you will be required to pay.
             You will announce your income using a box that looks like this:
@@ -359,193 +360,47 @@
     </p></div>
 
     {% else %}
-    <div style="padding:10px;", class="table-borders"><p>
-        Now let's go through a few hypothetical examples.
-    </p>
-    <p>
-        <h3> EXAMPLE 1</h3>
-    </p>
-    <table style="width:100%">
-        <tr>
-            <th>
-                Your Income
-            </th>
-            <td>
-                10 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Your Announced Income
-            </th>
-            <td>
-                10 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Deductions Paid on Announced Income
-            </th>
-            <td>
-                2.50 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Selected for Review?
-            </th>
-            <td>
-                Yes
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Deductions from Unannounced Earnings
-            </th>
-            <td>
-                0 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Additional Deductions
-            </th>
-            <td>
-                0 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                END OF ROUND INCOME
-            </th>
-            <td>
-                7.50 ECU
-            </td>
-        </tr>
+    <div class="row">
+        <p>Now let's go through a few hypothetical examples.</p>
+
+    <table class="table table-sm table-hover">
+        <thead class="thead-dark"><th scope="col">Example 1</th><th></th></thead>
+        <tbody>
+        <tr><th scope="row">Your Income</th><td align="right">10.00 ECU</td></tr>
+        <tr><th scope="row">Your Announced Income</th><td align="right">10.00 ECU</td></tr>
+        <tr><th scope="row">Deductions Paid on Announced Income</th><td align="right">2.50 ECU</td></tr>
+        <tr><th scope="row">Selected for Review?</th><td align="right">Yes</td></tr>
+        <tr><th scope="row">Deductions from Unannounced Income</th><td align="right">0.00 ECU</td></tr>
+        <tr><th scope="row">Additional Deductions</th><td align="right">0.00 ECU</td></tr>
+        <tr><th scope="row">END OF ROUND EARNINGS</th><td align="right"><strong>7.50 ECU</strong></td></tr>
+        </tbody>
     </table>
-    <p>
-        <h3> EXAMPLE 2</h3>
-    </p>
-    <table style="width:100%">
-        <tr>
-            <th>
-                Your Income
-            </th>
-            <td>
-                20 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Your Announced Income
-            </th>
-            <td>
-                16 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Deductions Paid on Announced Earnings
-            </th>
-            <td>
-                4 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Selected for Review?
-            </th>
-            <td>
-                Yes
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Deductions from Unannounced Earnings
-            </th>
-            <td>
-                1 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Additional Deductions
-            </th>
-            <td>
-                1 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                END OF ROUND INCOME
-            </th>
-            <td>
-                14 ECU
-            </td>
-        </tr>
+    <table class="table table-sm table-hover">
+        <thead class="thead-dark"><th scope="col">Example 2</th><th></th></thead>
+        <tbody>
+        <tr><th scope="row">Your Income</th><td align="right">20.00 ECU</td></tr>
+        <tr><th scope="row">Your Announced Income</th><td align="right">16.00 ECU</td></tr>
+        <tr><th scope="row">Deductions Paid on Announced Income</th><td align="right">4.00 ECU</td></tr>
+        <tr><th scope="row">Selected for Review?</th><td align="right">Yes</td></tr>
+        <tr><th scope="row">Deductions from Unannounced Income</th><td align="right">1.00 ECU</td></tr>
+        <tr><th scope="row">Additional Deductions</th><td align="right">1.00 ECU</td></tr>
+        <tr><th scope="row">END OF ROUND EARNINGS</th><td align="right"><strong>14.00 ECU</strong></td></tr>
+        </tbody>
     </table>
+    <table class="table table-sm table-hover">
+        <thead class="thead-dark"><th scope="col">Example 3</th><th></th></thead>
+        <tbody>
+        <tr><th scope="row">Your Income</th><td align="right">16.00 ECU</td></tr>
+        <tr><th scope="row">Your Announced Income</th><td align="right">10.00 ECU</td></tr>
+        <tr><th scope="row">Deductions Paid on Announced Income</th><td align="right">2.50 ECU</td></tr>
+        <tr><th scope="row">Selected for Review?</th><td align="right">No</td></tr>
+        <tr><th scope="row">Deductions from Unannounced Income</th><td align="right">0.00 ECU</td></tr>
+        <tr><th scope="row">Additional Deductions</th><td align="right">0.00 ECU</td></tr>
+        <tr><th scope="row">END OF ROUND EARNINGS</th><td align="right"><strong>13.50 ECU</strong></td></tr>
+        </tbody>
+    </table>
+
     <p>
-        <h3> EXAMPLE 3</h3>
-    </p>
-    <table style="width:100%">
-        <tr>
-            <th>
-                Your Income
-            </th>
-            <td>
-                16 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Your Announced Earnings
-            </th>
-            <td>
-                10 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Deductions Paid on Announced Earnings
-            </th>
-            <td>
-                2.50 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Selected for Review?
-            </th>
-            <td>
-                No
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Deductions from Unannounced Earnings
-            </th>
-            <td>
-                0 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Additional Deductions
-            </th>
-            <td>
-                0 ECU
-            </td>
-        </tr>
-        <tr>
-            <th>
-                END OF ROUND INCOME
-            </th>
-            <td>
-                13.50 ECU
-            </td>
-        </tr>
-    </table></div>
-    <div style="padding:10px;", class="table-borders"><p>
         After the review is completed, you will be presented with a screen that summarises the following:
         <ul>
             <li>
@@ -558,25 +413,24 @@
                 Whether you were reviewed or not.
             </li>
             <li>
-                Your final income for the round.
+                Your final earnings for the round.
             </li>
         </ul>
-    </p></div>
-    <div style="padding:10px;", class="box-heading"><p>
-        <b>Summary</b>
     </p>
+    </div>
+    <div class="row">
+        <h3>Summary</h3>
+    </div>
+    <div class="row">
     <p>
-        In short, each round in this part of the experiment will consist of three stages:
-    </p>
-    <p>
-        STAGE 1: You earn income by solving tables.
-    </p>
-    <p>
-        STAGE 2: You announce your income and pay a deduction.
-    </p>
-    <p>
-        STAGE 3: You get your final earnings, which depend on how your report your income and whether you were reviewed or not.
-    </p></div>
+        Each round in the experiment will consist of three stages:
+    <ul>
+        <li><strong>Stage 1:</strong> You receive income by solving tables;</li>
+        <li><strong>Stage 2:</strong> You announce your income and pay a deduction;</li>
+        <li><strong>Stage 3:</strong> Your earnings depend on how you announce your income
+        and whether your announcement was reviewed.</li>
+    </ul>
+    </div>
     {% endif %}
 
     {% formfields %}
