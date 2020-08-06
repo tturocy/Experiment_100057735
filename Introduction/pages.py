@@ -28,7 +28,7 @@ class PreTestSurvey(Page):
                 'labels': [
                     "What percentage of declared income will you have to pay in deductions?",
                     "What is the probability that your announcement will be reviewed?",
-                    "If reviewed and found to have not announced full earnings, how much will you pay in deductions"
+                    "If reviewed and found to have not announced your full income, how much will you pay in deductions?"
                 ]
             }
 
