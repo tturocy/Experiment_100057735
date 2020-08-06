@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
         <div class="row">
             <p>
             This is an experiment in the economics of decision-making.  If you following the instructions
@@ -21,13 +20,16 @@
             after you leave this page.
             </div>
         </div>
-    <div class="row">
+        <div class="row">
         <p>
             In this experiment, your earnings will be denoted in Experimental Currency Units (ECU).
             <strong>50 ECU are worth £1</strong>.
             After the experiment
         is over, we will convert the total of your earnings for the whole session into pounds.
         </p>
+        </div>
+        <div class="row border-top pt-1">
+        <h4 class="text-primary">Income</h4>
         <p>
         This experiment is divided into <strong>12 rounds</strong>.
         In each round, you will be presented with a series of tables containing ones and
@@ -36,14 +38,19 @@
         You will earn an <em>income</em> of <strong>10 ECU</strong> for each table for which you
         report the correct number of ones.
         </p>
-    </div>
-    <div class="row">
         <p>
         Each round lasts <strong>40 seconds</strong>.
         At the end of the round, you will see the number of tables on which you
         reported the correct number of zeroes, and the total <em>income</em>
         you receive from these reports.
         </p>
+        </div>
+        <div class="row border-top pt-1">
+        {% if session.config.tax_framing %}
+        <h4 class="text-primary">Declaring income and tax</h4>
+        {% else %}
+        <h4>Announcing income and deductions</h4>
+        {% endif %}
         <p>
         {% if session.config.tax_framing %}
             Your income is taxable and you will be required to fill in a tax return.
@@ -57,7 +64,7 @@
         {% endif %}
         </p>
     {% if session.config.mention_nhs %}
-        <p class="alert-info h5 p-2">
+        <p class="alert-info p-2">
                 All proceeds from the taxes collected on income will be provided to the NHS.
                 We will send details on the donation to participants shortly after the
                 completion of this series of experiments.
@@ -75,7 +82,12 @@
         {% endif %}
         </p>
     </div>
-    <div class="row">
+    <div class="row border-top pt-1">
+        {% if session.config.tax_framing %}
+        <h4 class="text-primary">Auditing of declarations</h4>
+        {% else %}
+        <h4 class="text-primary">Reviewing of announcements</h4>
+        {% endif %}
         <p>
         {% if session.config.tax_framing %}
         Once you complete your tax form, the tax authority may choose to audit it.
@@ -85,16 +97,12 @@
         <b>There is a 1 in 5 chance (or 20% probability) your announcement will be reviewed.</b>
         {% endif %}
         </p>
-    </div>
-    <div class="row">
     {% if session.config.tax_framing %}
-    <p>
-        <b>If you are NOT selected for tax audit:</b>
+    <ul>
+        <li><b>If you are NOT selected for tax audit:</b>
         Your final earnings for the round will be equal to your income
-        minus the tax paid based on the income you reported on your tax form.
-    </p>
-    <p>
-        <b>If you ARE selected for tax audit:</b>
+            minus the tax paid based on the income you reported on your tax form.</li>
+        <li><b>If you ARE selected for tax audit:</b>
     <ul>
         <li>
             If you reported your income accurately, then nothing further will happen;
@@ -105,15 +113,14 @@
             then you will be required to pay the extra amount of tax due to the authority.
             In addition, you will pay a fine of 1 ECU for each ECU of underpaid tax.
         </li>
-    </ul>
+    </ul></li>
+        </ul>
     {% else %}
-    <p>
-        <b>If you are NOT selected for review:</b>
+    <ul>
+        <li><b>If you are NOT selected for review:</b>
         Your final earnings for the round will be equal to your income
-        minus the deductions based on the income you announced.
-    </p>
-    <p>
-        <b>If you ARE selected for review:</b>
+            minus the deductions based on the income you announced.</li>
+    <li><b>If you ARE selected for review:</b>
         <ul>
           <li>
               If you announced your income accurately, then nothing further will happen;
@@ -125,15 +132,20 @@
               In addition, you will pay a further deduction of 1 ECU for each ECU of underpaid
               deductions.
           </li>
-       </ul>
+        </ul></li></ul>
     {% endif %}
-
+    </div>
+    <div class="row border-top pt-1">
+    <h4 class="text-primary">End-of-round summary</h4>
+    </div>
+    <div class="row">
     <p>
     {% if session.config.tax_framing %}
         After the audit is completed, you will be presented with a screen that summarises:
     {% else %}
         After the review is completed, you will be presented with a screen that summarises:
     {% endif %}
+    </p>
         <ul>
             <li>How much income you received from solving tables;</li>
     {% if session.config.tax_framing %}
@@ -145,14 +157,15 @@
     {% endif %}
             <li>Your final earnings for the round.</li>
         </ul>
-    </p>
     </div>
+    <div class="row border-top pt-1">
+    <h4 class="text-primary">Examples</h4>
     </div>
-    {% if session.config.tax_framing %}
     <div class="row">
         <p>
         Now let's go through a few hypothetical examples.
     </p>
+    {% if session.config.tax_framing %}
     <table class="table table-sm table-hover">
         <thead class="thead-dark"><th scope="col">Example 1</th><th></th></thead>
         <tbody>
@@ -188,12 +201,8 @@
         <tr><th scope="row">Fine</th><td align="right">0.00 ECU</td></tr>
         <tr><th scope="row">END OF ROUND EARNINGS</th><td align="right"><strong>13.50 ECU</strong></td></tr>
         </tbody>
-    </table></div>
-
+    </table>
     {% else %}
-    <div class="row">
-        <p>Now let's go through a few hypothetical examples.</p>
-
     <table class="table table-sm table-hover">
         <thead class="thead-dark"><th scope="col">Example 1</th><th></th></thead>
         <tbody>
@@ -230,11 +239,10 @@
         <tr><th scope="row">END OF ROUND EARNINGS</th><td align="right"><strong>13.50 ECU</strong></td></tr>
         </tbody>
     </table>
-    </div>
     {% endif %}
-
-    <div class="row">
-        <h3>Summary</h3>
+    </div>
+    <div class="row border-top pt-1">
+        <h4 class="text-primary">Summary</h4>
     </div>
     <div class="row">
       <p>
@@ -252,8 +260,11 @@
     {% endif %}
     </ul>
     </div>
-
+    <div class="row border-top pt-1">
+    <h4 class="text-primary">Confirmation</h4>
+    </div>
     {% formfields %}
-    
-    {% next_button %}
+    <div class="row justify-content-center">
+        <button class="otree-btn-next btn btn-primary">Confirm and proceed</button>
+    </div>
     {% endblock %}
