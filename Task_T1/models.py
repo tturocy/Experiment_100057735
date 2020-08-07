@@ -56,7 +56,10 @@ class Player(BasePlayer):
     correct_counts = models.IntegerField(initial=0)
     counts_submitted = models.IntegerField(initial=0)
     pay_for_round = models.CurrencyField(initial=c(0))
-    claimed_earnings = models.CurrencyField(label='Please announce your income in the box, then click next')
+    claimed_earnings = models.CurrencyField(
+        label='Please announce your income in the box, then click next',
+        min=c(0)
+    )
     tax_audit = models.BooleanField()
     tax_message = models.StringField()
     tax_on_claimed = models.CurrencyField(initial=c(0))

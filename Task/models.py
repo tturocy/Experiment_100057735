@@ -57,7 +57,8 @@ class Player(BasePlayer):
     counts_submitted = models.IntegerField(initial=0)
     pay_for_round = models.CurrencyField(initial=c(0))
     claimed_earnings = models.CurrencyField(
-        label='My declared income for this round is'
+        label='My declared income for this round is',
+        min=c(0)
     )
     tax_audit = models.BooleanField()
     tax_message = models.StringField()

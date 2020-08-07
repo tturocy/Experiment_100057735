@@ -82,7 +82,7 @@ class Player(BasePlayer):
         label='What is your gender?',
         choices=['Male', 'Female', 'Other', 'Prefer not to say'],
         blank=True,
-        widget=widgets.RadioSelect
+        widget=widgets.RadioSelectHorizonal
     )
     q11 = models.IntegerField(
         label='How old are you?', blank=True
