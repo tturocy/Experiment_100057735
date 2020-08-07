@@ -43,9 +43,11 @@ class Player(BasePlayer):
 
     pre_test_question_3 = models.StringField(
         label='If audited and found to be under-declaring, how much will you pay in fines',
-        choices=['20%', '25%', '50%'],
+        choices=['1 ECU',
+                 '2 ECU',
+                 '3 ECU'],
         widget=widgets.RadioSelectHorizontal
     )
     def pre_test_question_3_error_message(self, value):
-        if value != '50%':
-            return 'The correct answer is 50%.'
+        if value != '1 ECU':
+            return 'The correct answer is 1 ECU.'
