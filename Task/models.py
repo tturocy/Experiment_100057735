@@ -9,7 +9,7 @@ from numpy.random import choice
 class Constants(BaseConstants):
     name_in_url = 'Experiment_Task'
     players_per_group = None
-    num_rounds = 12
+    num_rounds = 5
     task_time = 40
     payment_per_correct_answer = 1
     table_pay = c(10)

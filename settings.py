@@ -16,8 +16,8 @@ SESSION_CONFIGS = [
          display_name='Treatment: Tax and NHS framing',
          num_demo_participants=1,
          app_sequence=[
-            #'Introduction',
-            #'Task',
+            'Introduction',
+            'Task',
             'Survey'
          ],
          mention_nhs=True,
