@@ -250,13 +250,13 @@
     <ul>
         <li><strong>Stage 1:</strong> You receive income by solving tables;</li>
     {% if session.config.tax_framing %}
-        <li><strong>Stage 2:</strong> You announce your income and pay a deduction;</li>
-        <li><strong>Stage 3:</strong> Your earnings depend on how you announce your income
-        and whether your announcement was reviewed.</li>
-    {% else %}
         <li><strong>Stage 2:</strong> You declare your income to the tax authority;</li>
         <li><strong>Stage 3:</strong> Your earnings depend on how you declare your income
         and whether your declaration was audited.</li>
+    {% else %}
+        <li><strong>Stage 2:</strong> You announce your income and pay a deduction;</li>
+        <li><strong>Stage 3:</strong> Your earnings depend on how you announce your income
+        and whether your announcement was reviewed.</li>
     {% endif %}
     </ul>
     </div>
