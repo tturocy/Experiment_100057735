@@ -26,7 +26,7 @@ class PreTestSurvey(Page):
         else:
             return {
                 'labels': [
-                    "What percentage of declared income will you have to pay in deductions?",
+                    "What percentage of announced income will you have to pay in deductions?",
                     "What is the probability that your announcement will be reviewed?",
                     "If reviewed and found to have not announced your full income, how much will you pay in deductions?"
                 ]
